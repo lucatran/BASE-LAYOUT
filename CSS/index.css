@@ -1,0 +1,595 @@
+/* golbal */
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+  }
+html, body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  /* nếu ko được mặc định thì 1rem = 16px */
+}
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/* header */
+header{
+    background-color: #4E2A84;
+    color: white;
+    height: 85px;
+}
+/* dựa vào xét px ở body thì 1rem = 18px nếu body có định nghĩa font-size = 18px*/
+header p{
+    font-size: 2.2rem;
+    padding-left: 50px;
+}
+.header__content nav ul{
+    list-style: none;
+}
+.header__content nav li{
+    display: inline;
+}
+.header__content nav a{
+    /* text-decoration:  none; */
+    color: white;
+    padding: 0 20px;
+    font-size: 0.7rem;
+}
+ 
+.header__content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;/*  khoang cach chieu ngnag*/
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;  /* khoang cach theo chieu doc */
+    padding: 15px 0;
+    width:80% ;
+    margin: 0 auto;
+}
+.header__content a:hover{
+    color: #ff0e83;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* CAROUSEL */
+.carousel{
+    background-image: url(../img/b3.jpg);
+    height: 750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    /* flex để trên 1 hang ngnag va ap dung cho 1 thẻ con */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 250px;
+}
+.carousel__content button{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 16px 36px;
+    font-size: 0.9rem;
+    background-color: #ff0e83;
+    color: white;
+    cursor: pointer;
+    /* transition-property: all;
+    transition-delay: 0.5s;
+    transition-duration: 0.5s;
+    transition-timing-function: linear; */
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+    -webkit-animation: upDown 5s linear infinite ;
+            animation: upDown 5s linear infinite ;
+}
+.carousel__content button:hover{
+    border: 1px solid #ff0e83;
+    background-color: white;
+    color: black;
+}
+.carousel h1{
+        padding-bottom: 30px;
+        font-size: 3rem;
+    }
+.carousel p{
+    padding-bottom: 20px;
+}
+
+/* .intro */
+.intro{
+    /* gird de chia hang giong nhu flex */
+display: grid ;
+/* grid-template-columns: 25% 25% 25% 25%; */
+/* grid-template-columns: repeat(4,25%); */
+/* fr chiếm 1 phan trên số cột*/
+grid-template-columns: repeat(4,1fr);
+ /* canh chiều ngnag*/
+text-align: center; 
+/* canh chieu doc 
+align-items: center; */
+}
+/* gom hang dung grid colum */
+.intro__ab1{
+    /* line bat dau va ket thuc */
+    grid-column: 2 / 4; 
+    /* line bat dau va số colum chiếm */
+    /* grid-column: 2 / span 2; */
+}
+.intro__best{
+    grid-column: 1 / 3;
+    background-color: #ED6498;
+}
+.intro__ab4{
+    grid-column: 3 / 5;
+}
+/* thẻ hinh luon display là inline có viền, tắt bằng cach block */
+.intro__items img{
+    width: 110%;
+    display: block;
+}
+.intro__items{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* canh theo chieu doc */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* canh theo chieu ngnag */
+    /* justify-content: center; */
+}
+/* grid và flex */
+/* grid dan layout nhiu cot nhieu hang */
+/* flex dan layout don gian */
+/* khi làm thì su dụng grid roi toi flex hoac cuối là float */
+.intro__1 {
+    background-color: #4E2A84;
+}
+.intro__2{
+    background-color: #FF0E83;
+}
+.intro__3{
+    background-color: #836EAA;
+}
+.intro__items h1{
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+    color: white;
+}
+.intro__items p{
+    font-size: 0.9rem;
+
+    color: #C1BCB3;
+}
+
+
+
+/* number */
+.number{
+    padding: 100px 0;
+}
+.number__all{
+    margin: 0 auto;
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    
+    /* text-align canh chu
+    align-items canh cai div */
+}
+/* chọn cái phần tử con đầu tien */
+.number__items p:nth-child(1){
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #4E2A84;
+}
+.number__items p:nth-last-child(1){
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+/* hoặc truyền vô số thứ tự
+.number__items p:first-child{
+    margin-bottom: 5px;
+} */
+
+/* SERVICE */
+.services{
+    padding: 50px 0;
+    text-align: center;
+    background-image: url(../img/s1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    
+}
+.services h2{
+    font-size: 3rem;
+    padding-bottom: 50px;
+    color: white;
+}
+.services__content{
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+}
+.services__items i{
+    font-size: 3rem;
+    color: #4E2A84;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #4E2A84;
+    border-radius: 50%;
+    background-color: white;
+    /*  line- height canh giua theo chiều doc chỉ có 1 dòng chữ */
+    line-height:  100px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    
+}
+.services__items:hover i{
+    color: #FF0E83;
+}
+
+/* GALLERY */
+.gallery__content{
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+    /* tao khoảng giua các hình*/
+    /* grid-gap:20px; 
+    width: 98%;
+    margin: 0 auto; */
+    
+}
+.gallery__g1{
+    grid-column: 1 / 3;
+}
+.gallery__g6{
+    grid-column: 3 / 5;
+}
+
+.gallery__items img{
+    width: 100%;
+   height: 100%;
+   display: block;
+}
+.gallery__items{
+    padding: 15px;
+}
+.gallery__img{
+    position: relative;
+}
+.gallery__text{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: white;
+    text-align: right;
+    background-color: rgba(48, 133, 163, 0.2);
+    /* padding-right: 30px;
+    padding-top: 50px; */
+    padding: 50px 30px 0 30px;
+}
+.gallery__text p{
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+}
+/* .gallery__text h3::before{
+    content:"The";
+}
+.gallery__text h3::after{
+    content:"!";
+} */
+.gallery__text h3::after{
+    content:"";
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    display: block;
+    margin-top: 15px;
+}
+
+.gallery__text h3{
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gallery__img:hover .gallery__text h3{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+.gallery__text h3::after{
+-webkit-transform: translateY(50px);
+        transform: translateY(50px);
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+opacity: 0;
+}
+.gallery__img:hover .gallery__text h3::after{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+}
+.gallery__text p{
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 0;
+}
+.gallery__img:hover .gallery__text p{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+}
+
+/* TEAM */
+.team{
+    background-color: #4E2A84;
+}
+.team h2{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    font-weight: 500;
+    
+}
+.team__content{ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%; 
+    margin: 0 auto;
+    
+}
+.team__member img{
+    display: block;
+    width: 100%;
+}
+.team__items{
+    padding: 15px 15px;
+    
+}
+.team__member{
+    position: relative;
+}
+.team__title{
+    background-color: #FF0E83;
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.team__detail{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+   
+    padding: 100px 20px;
+    line-height: 30px;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.team__items:hover .team__title{
+    opacity: 0;
+}
+.team__items:hover .team__detail{
+    opacity: 1;
+}
+.team__detail p:nth-child(1){
+    font-size: 1.2rem;
+    color: #EB378C;
+}
+
+
+
+
+/* chay ngang */
+.team__items2 .team__menber{
+overflow: hidden;
+}
+.team__items2 .team__detail{
+-webkit-transform: translateX(-101%);
+        transform: translateX(-101%);
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+}
+.team__items2:hover .team__detail{
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+/* xoay */
+
+.team__items3 .team__detail{
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+}
+.team__items3:hover .team__detail{
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+}
+
+/* scale */
+.team__items4 .team__detail{
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+.team__items4:hover .team__detail{
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+
+
+
+/* ANIMATION */
+@-webkit-keyframes upDown{
+0%{
+
+}
+25%{
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+}
+50%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+75%{
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+}
+100%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+}
+@keyframes upDown{
+0%{
+
+}
+25%{
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+}
+50%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+75%{
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+}
+100%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+}
+ /* TEST */
+.test{
+    padding: 50px 0;
+}
+.test__content{
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+/* CONTACT */
+
+.contact{
+padding: 50px 0;
+}
+.contact__form{
+    width: 70%;
+margin: 0 auto;
+}
+.contact__formContent{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+}
+.contact__textarea, .contact__button{
+grid-column: 1/ span 2 ;
+ 
+}
+.contact__textarea textarea{
+    width: 100%;
+    padding: 15px;
+    outline: none;
+}
+.contact__input input{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.contact__input input:focus{
+    outline: none;
+    -webkit-box-shadow: 0 0 0 0.2rem  rgba(0, 123, 255, .25);
+            box-shadow: 0 0 0 0.2rem  rgba(0, 123, 255, .25);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.contact__button button{
+    width: 100%;
+    padding: 10px;
+    background-color:#FF0E83;
+    border: 0 #FF0E83;
+}
+.contact__input, .contact__textarea, .contact__button{
+    padding: 10px;
+}
+textarea::-webkit-input-placeholder{
+    color: red;
+}
+textarea:-ms-input-placeholder{
+    color: red;
+}
+textarea::-ms-input-placeholder{
+    color: red;
+}
+textarea::placeholder{
+    color: red;
+}
+textarea{
+    color: blue;
+}
+iframe{
+width: 100%;
+}
+
+/* backtotop */
+.backToTop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+.backToTop__arrow i{
+    color: blue;
+    font-size: 3rem;
+}
+.backToTop__arrow{
+    visibility: hidden;
+    opacity: 0;
+}
+.cd-top--is-visible{
+    visibility: visible;
+    opacity: 1;
+}
+
+
